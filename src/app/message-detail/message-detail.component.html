@@ -1,0 +1,10 @@
+<div class="message-content" *ngIf="message">
+  <div class="from">
+    <label for="from">From: </label><span id="from">{{message.from}}</span> 
+  </div>
+  <div class="subject">
+    <label for="subject">Subject: </label><span id="subject">{{message.subject}}</span>
+  </div>
+  <div class="description" [innerHTML]="message.description">
+  </div>
+</div>

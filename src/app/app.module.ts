@@ -8,16 +8,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { InboxComponent } from './inbox/inbox.component';
 
-import { MailService } from './mail.service';
+import { MockMailService } from './mock.mail.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { MessageDetailComponent } from './message-detail/message-detail.component';
+
+import { StripHtmlPipe } from './striphtmlpipe';
+import { CompactPipe } from './compactpipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AboutComponent,
-    InboxComponent
+    InboxComponent,
+    MessageDetailComponent,
+    StripHtmlPipe,
+    CompactPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [MailService],
+  providers: [MockMailService],
   bootstrap: [AppComponent]
 })
 

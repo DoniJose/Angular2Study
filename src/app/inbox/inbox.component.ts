@@ -1,3 +1,5 @@
+import { MockMailService } from './../mock.mail.service';
+import { InboxMessage } from './../inboxmessage';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class InboxComponent implements OnInit {
-  constructor() { }
+  messages: InboxMessage[] = [];
+  selectedMessage: InboxMessage;
+
+  constructor(private mailService: MockMailService) { }
+
   ngOnInit() {
+    this.messages = this.mailService.getMessages();
+  }
+
+  onSelect(message: InboxMessage): void {
+    this.selectedMessage = message;
   }
 }

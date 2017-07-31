@@ -1,0 +1,17 @@
+.message-content {
+    margin: .5em 0 .5em -5px;
+    width: 85%;
+    background: darkgray;
+    position: absolute;
+    height: 96%;
+    overflow: auto;
+}
+.from {
+    padding: 5px;
+}
+.subject {
+    padding: 5px;
+}
+.description {
+    padding: 5px;
+}

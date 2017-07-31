@@ -4,4 +4,5 @@ export class InboxMessage {
   description: string;
   from: string;
   to: string;
+  receivedDate: Date;
 }

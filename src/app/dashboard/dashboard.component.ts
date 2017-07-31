@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InboxMessage } from '../inboxmessage';
+import { MockMailService } from '../mock.mail.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DashboardComponent implements OnInit {
-  constructor() { }
+  messages: InboxMessage[] = [];
+
+  constructor(private mailService: MockMailService) { }
+
   ngOnInit() {
+    this.messages = this.mailService.getMessages().slice(0, 4);
   }
 }

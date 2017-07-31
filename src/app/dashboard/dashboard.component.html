@@ -1,3 +1,10 @@
-<p>
-  dashboard works!
-</p>
+<h3>Recent Messages</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let message of messages" class="col-1-4">
+    <div class="module">
+      <i>Received at : {{message.receivedDate}}</i>
+      <h4>{{message.subject}}</h4>
+      <h5>{{message.description | striphtmlpipe | compactpipe: 1500}}</h5>
+    </div>
+  </a>
+</div>
